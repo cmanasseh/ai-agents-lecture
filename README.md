@@ -1,0 +1,59 @@
+# AI Agents Lecture
+
+Materials for a three-part Berkeley lecture on building, evaluating, and deploying AI agents.
+
+## Lecture structure
+
+| Part | Topic | Lead |
+|---|---|---|
+| 1 | Coding with AI agents | Eloi Pereira |
+| 2 | Validation and evaluation | Christian |
+| 3 | Deployment | Alex |
+
+The parts are loosely coupled. They share a running example, and each part can use as much or as little of it as it needs.
+
+## Running example: a quiz generator
+
+An AI agent reads the slides from Part 1 and generates a multiple-choice quiz. Every question must cite a verbatim quote from the slides, so grounding can be checked by code.
+
+Part 1 builds it live in three versions:
+
+| Version | Design | Who owns the control flow |
+|---|---|---|
+| v0 | Single structured LLM call | Nobody |
+| v1 | Agent loop with a validator | The model |
+| v2 | Agent graph: concepts, questions, critic, assembly | The program |
+
+The harness is plain Python, with no agent framework. Models run locally through Ollama and can be swapped with one environment variable, which makes model comparison part of the exercise.
+
+Possible hooks for the other parts:
+
+- **Evaluation:** grounding, ambiguity, guessability, loop vs graph, model vs model. Every run writes a trace to `runs/`.
+- **Deployment:** hardware requirements for a given model and application, edge and IoT, robotics.
+
+## Repository layout
+
+```
+slides/
+  lecture.md    # Part 1 slides (Marp); also the quiz generator's input
+```
+
+The application code, tests, run traces, and Claude Code configuration are added during the live build.
+
+## Viewing the slides
+
+The slides are plain Markdown with [Marp](https://marp.app) front matter. Open them with the Marp extension for VS Code, or render them from the command line:
+
+```bash
+npx @marp-team/marp-cli@latest slides/lecture.md --html
+```
+
+## Prerequisites for the live build
+
+- Python 3.12+ and [uv](https://docs.astral.sh/uv/)
+- [Ollama](https://ollama.com), with at least one model that supports tool calling
+- [Claude Code](https://code.claude.com)
+
+## License
+
+MIT. See [LICENSE](LICENSE).
