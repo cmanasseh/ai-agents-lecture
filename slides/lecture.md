@@ -5,7 +5,7 @@ paginate: true
 
 # Coding with AI Agents
 
-From prompts to loops to graphs
+Who owns the control flow?
 
 Eloi Pereira · Director of Data Science, Element Fleet Management
 
@@ -21,15 +21,60 @@ Two layers: a coding agent writes our application, and the application is itself
 
 ---
 
-## How AI coding tools evolved
+## 2021 · Autocomplete
 
-| Generation | Example tools | Unit of work |
-|---|---|---|
-| Autocomplete | Copilot (early) | A line |
-| Chat | ChatGPT, Claude | A snippet |
-| Agentic | Cursor, Claude Code, Codex CLI | A task |
+```python
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5 / 9    # ← suggested; press Tab
+```
 
-Each step moved the human from writing code to specifying and reviewing it.
+The model guesses the next line. You accept or reject it.
+
+**You decide every line.**
+
+---
+
+## 2023 · Prompt engineering
+
+```text
+You are an expert Python developer.
+Write a function that converts Fahrenheit to Celsius.
+Think step by step. Return only code.
+```
+
+You craft the input. The model is a black box you talk to.
+
+**You decide; the model answers once.**
+
+---
+
+## Mid 2025 · Context engineering
+
+```text
+┌─ context window ─────────────────┐
+│ system prompt   CLAUDE.md        │
+│ tools           read, edit, bash │
+│ docs            relevant files   │
+│ examples        few-shot         │
+│ task            fix issue #42    │
+└──────────────────────────────────┘
+```
+
+The model is only as good as what you put in its context: RAG, system prompts, tool descriptions, few-shot examples — curating the full context became the lever.
+
+**You decide what the model sees.**
+
+---
+
+## 2026 · Agentic paradigms
+
+**Loop engineering** (June 2026)
+One agent cycles plan → act → observe → retry until done. **The model decides the next step.**
+
+**Graph engineering** (July 2026)
+Many steps, wired together: parallel stages, feedback routed to one node. **Code decides the steps; the model works inside them.**
+
+Both come back in detail later, and we build one of each today.
 
 ---
 
@@ -56,16 +101,33 @@ The model never runs code itself. The surrounding program does.
 
 ---
 
-## The harness
+## Every turn is a roll of the dice
 
-The harness is all the code around the model:
+If each step is right 95% of the time:
 
-- **Context assembly:** what goes into the prompt
-- **Output parsing:** turning text into structured actions
-- **Tool dispatch:** executing actions safely
-- **Feedback:** formatting results and errors for the model
-- **Stop conditions:** success, budget, failure
-- **Tracing:** recording every step
+| Steps | 1 | 10 | 20 | 50 |
+|---|---|---|---|---|
+| Whole run right | 95% | 60% | 36% | 8% |
+
+- Errors compound over the run
+- A mistake stays in the context and steers every later turn
+
+Temperature 0 doesn't fix this: the path itself is chosen by the model.
+
+---
+
+## The harness: taking control back
+
+The harness is the deterministic code around the model. You decide:
+
+- **Context:** what the model sees
+- **Tools:** which actions are allowed, and how they run
+- **Feedback:** how results and errors come back
+- **Stop conditions:** what counts as done
+- **Budget:** how many turns, tokens, seconds
+- **Tracing:** a record of every step
+
+The model proposes; the harness decides.
 
 Do not confuse the agent harness with an eval harness, which runs tests.
 
@@ -108,6 +170,8 @@ An agent is only as good as its feedback signal.
 
 Errors returned to the model become its next instruction.
 
+A check turns a probabilistic output into a known one.
+
 ---
 
 ## Guardrails in layers
@@ -149,6 +213,7 @@ The key question: **who owns the control flow?**
 | | Loop | Graph |
 |---|---|---|
 | Control flow | The model decides | You decide |
+| Non-determinism | Compounds over the whole run | Contained in each node |
 | Flexibility | High | Lower |
 | Cost and latency | Unpredictable | Bounded |
 | Parallelism | Hard | Natural (fan-out) |
@@ -156,11 +221,17 @@ The key question: **who owns the control flow?**
 
 ---
 
-## When to use which
+## Keep the loops small
+
+```text
+one long loop:  model ⟲ × 50 ───────────────────────────→ result?
+
+graph:          [model ⟲ ≤ 3] → check → [model ⟲ ≤ 3] → check → result
+```
 
 - **Loop:** open-ended tasks where the steps are unknown in advance
 - **Graph:** repeatable tasks where you know the steps
-- In practice: graphs whose nodes contain small loops
+- **Subagents** are the same idea for coding agents: a bounded task, a fresh context, a result you can check
 
 Start with the simplest thing that works. Add structure when you see failures.
 
@@ -185,6 +256,8 @@ The quote makes grounding checkable by code, not just by judgment.
 | v2 | Graph: concepts → questions → critic → assembly | Ambiguity, cost, position bias |
 
 Each version is motivated by a failure of the previous one.
+
+v0 → v1 gives the model control; v1 → v2 takes it back, except inside each node.
 
 ---
 
