@@ -36,6 +36,7 @@ Possible hooks for the other parts:
 ```
 slides/
   lecture.md    # Part 1 slides (Marp); also the quiz generator's input
+  img/          # SVG diagrams used by the slides
 ```
 
 The application code, tests, run traces, and Claude Code configuration are added during the live build.
@@ -47,6 +48,8 @@ The slides are plain Markdown with [Marp](https://marp.app) front matter. Open t
 ```bash
 npx @marp-team/marp-cli@latest slides/lecture.md --html
 ```
+
+The HTML file is written next to `lecture.md` so it can find the diagrams in `slides/img/`. To export a PDF instead, add `--pdf --allow-local-files`. Speaker notes are HTML comments in the markdown; press `p` in the rendered HTML to open presenter view.
 
 ## Prerequisites for the live build
 

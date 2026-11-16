@@ -23,6 +23,7 @@ This file is shown on screen during the lecture. Keep it short and accurate.
 
 ```
 slides/lecture.md      # slides; also the quiz input
+slides/img/            # SVG diagrams used by the slides
 quizgen/
   schema.py            # Pydantic models: the contract (Question, Quiz)
   llm.py               # the only module that talks to Ollama
@@ -57,8 +58,9 @@ runs/                  # JSONL traces handed to Part 2
   Readability on stage beats architectural purity.
 - Each version must run end to end on a laptop with a small local model in under ~2 minutes.
 - Git tags `v0`, `v1`, `v2` are the fallback when a live step derails. Never rewrite tagged history.
-- `slides/lecture.md` is both slides and test input; edits change quiz outputs. Keep slides within
-  the 20-minute budget.
+- `slides/lecture.md` is both slides and test input; edits change quiz outputs. The slides carry
+  little text, so the speaker notes (HTML comments) are most of what the quiz can quote. Keep
+  slides within the 20-minute budget.
 
 ## Commands
 
