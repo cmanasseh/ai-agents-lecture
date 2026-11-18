@@ -53,9 +53,33 @@ The HTML file is written next to `lecture.md` so it can find the diagrams in `sl
 
 ## Prerequisites for the live build
 
-- Python 3.12+ and [uv](https://docs.astral.sh/uv/)
+- Python 3.14+ and [uv](https://docs.astral.sh/uv/)
 - [Ollama](https://ollama.com), with at least one model that supports tool calling
 - [Claude Code](https://code.claude.com)
+
+## Running the quiz generator
+
+From the repo root, with the Ollama server running:
+
+```bash
+uv sync                                              # install dependencies
+uv run python -m quizgen.v0_single slides/lecture.md # generate one quiz (v0)
+```
+
+The model defaults to `qwen3:8b`. Swap it with an environment variable:
+
+```bash
+QUIZGEN_MODEL=qwen3.5:4b uv run python -m quizgen.v0_single slides/lecture.md
+```
+
+Each run writes the quiz to `data/quizes/v0/quiz_<timestamp>.json` and appends a trace
+(model, tokens, latency, quiz) to `runs/v0.jsonl`. Paths are relative, so run from the repo root.
+
+Run the tests (no Ollama needed; the LLM is faked):
+
+```bash
+uv run pytest
+```
 
 ## License
 
