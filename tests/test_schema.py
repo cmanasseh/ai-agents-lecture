@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from quizgen.schema import Question
+from quizgen.schema import Concept, Question
 
 VALID = {
     "concept": "agent loop",
@@ -32,3 +32,8 @@ def test_valid_question_parses() -> None:
 def test_invalid_question_is_rejected(override: dict) -> None:
     with pytest.raises(ValidationError):
         Question.model_validate(VALID | override)
+
+
+def test_concept_quote_follows_the_same_length_rule() -> None:
+    with pytest.raises(ValidationError):
+        Concept(concept="agent", source_quote="too short")

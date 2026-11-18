@@ -1,6 +1,7 @@
 """The only module that talks to Ollama. Swap models with the QUIZGEN_MODEL env var."""
 
 import os
+import threading
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -58,6 +59,26 @@ def tool_spec(name: str, description: str, schema: dict) -> dict:
         "type": "function",
         "function": {"name": name, "description": description, "parameters": parameters},
     }
+
+
+class CountingLLM:
+    """Wraps an LLM and sums tokens across calls, including calls from parallel threads."""
+
+    def __init__(self, llm: LLM) -> None:
+        self.llm = llm
+        self.input_tokens = 0
+        self.output_tokens = 0
+        self._lock = threading.Lock()
+
+    def chat(
+        self, messages: list[dict], schema: dict | None = None, tools: list[dict] | None = None
+    ) -> Reply:
+        """Forward the call and count its tokens."""
+        reply = self.llm.chat(messages, schema, tools)
+        with self._lock:
+            self.input_tokens += reply.input_tokens
+            self.output_tokens += reply.output_tokens
+        return reply
 
 
 class OllamaLLM:
