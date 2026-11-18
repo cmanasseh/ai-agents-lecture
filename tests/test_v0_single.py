@@ -10,7 +10,7 @@ QUESTION = {
     "stem": "Who owns the control flow in an agent loop?",
     "options": ["The model", "The program", "The user", "Nobody"],
     "answer_index": 0,
-    "source_quote": "the model decides",
+    "source_quote": "the model decides what happens next",
     "difficulty": "easy",
 }
 

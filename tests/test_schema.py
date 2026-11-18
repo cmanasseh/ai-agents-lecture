@@ -25,6 +25,8 @@ def test_valid_question_parses() -> None:
         {"answer_index": 4},
         {"answer_index": -1},
         {"difficulty": "trivial"},
+        {"source_quote": "only four words here"},
+        {"source_quote": " ".join(["word"] * 41)},
     ],
 )
 def test_invalid_question_is_rejected(override: dict) -> None:
