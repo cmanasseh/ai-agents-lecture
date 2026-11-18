@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "What is an agent?",
+      "stem": "According to the text, what is an agent?",
+      "options": [
+        "A model that runs code independently without any feedback.",
+        "A model using tools in a loop.",
+        "A system that only runs code without any model involvement.",
+        "A system that only uses tools without any model."
+      ],
+      "answer_index": 1,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Agent vs. Harness",
+      "stem": "According to the text, what is the role of the harness in an agent system?",
+      "options": [
+        "The harness is the model that makes decisions.",
+        "The harness is everything that is not the model, and it is where engineering happens.",
+        "The harness is a tool that runs the model's code.",
+        "The harness is a feedback loop that runs after the model."
+      ],
+      "answer_index": 1,
+      "source_quote": "The harness is everything that is not the model. It is deterministic code, and it is where engineering happens.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Feedback Loop",
+      "stem": "According to the text, what is the purpose of the feedback loop in an agent system?",
+      "options": [
+        "To make the model run faster.",
+        "To check if the output meets the specification.",
+        "To let the model run without any checks.",
+        "To allow the model to run independently."
+      ],
+      "answer_index": 1,
+      "source_quote": "The feedback loop is around the whole agent. A check compares the output with the specification, and the error goes back in as the next input.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Control Flow",
+      "stem": "According to the text, who owns the control flow in an agent system?",
+      "options": [
+        "The model.",
+        "The harness.",
+        "The user.",
+        "The feedback loop."
+      ],
+      "answer_index": 1,
+      "source_quote": "The model proposes. The harness decides.",
+      "difficulty": "hard"
+    },
+    {
+      "concept": "Loop vs Graph",
+      "stem": "According to the text, what is the difference between a loop and a graph in an agent system?",
+      "options": [
+        "A loop is a way to run code faster, and a graph is for slower processes.",
+        "A loop is a single agent in a feedback loop, and a graph is a system of agents with known steps.",
+        "A loop is for testing, and a graph is for production.",
+        "A loop is for the model, and a graph is for the harness."
+      ],
+      "answer_index": 1,
+      "source_quote": "Loop: one agent inside one feedback loop. You give Claude Code a goal and a check, and it keeps going until the check passes. The model chooses every step in between. Graph: the work is split into steps that your code wires together.",
+      "difficulty": "hard"
+    }
+  ]
+}

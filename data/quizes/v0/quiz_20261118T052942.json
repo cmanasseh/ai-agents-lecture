@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "What is the main question posed in the talk?",
+      "stem": "What is the central question the talk explores?",
+      "options": [
+        "Who owns the control flow?",
+        "How to build an AI agent?",
+        "What is the best way to code?",
+        "Which model is better to use?"
+      ],
+      "answer_index": 0,
+      "source_quote": "Who owns the control flow?",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "What is the role of a harness in an agent system?",
+      "stem": "What is the role of the harness in an agent system?",
+      "options": [
+        "To run the model's code directly",
+        "To provide deterministic code and control the system",
+        "To replace the model entirely",
+        "To act as a user interface"
+      ],
+      "answer_index": 1,
+      "source_quote": "The harness is everything that is not the model. It is deterministic code, and it is where engineering happens.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the purpose of the feedback loop in an agent system?",
+      "stem": "What is the purpose of the feedback loop in an agent system?",
+      "options": [
+        "To provide the model with more data",
+        "To check if the output meets the specification",
+        "To speed up the model's processing",
+        "To replace the model entirely"
+      ],
+      "answer_index": 1,
+      "source_quote": "The feedback loop is around the whole agent. A check compares the output with the specification, and the error goes back in as the next input.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the main difference between a loop and a graph in organizing work?",
+      "stem": "What is the main difference between a loop and a graph in organizing work?",
+      "options": [
+        "Loop is for small tasks, graph is for large tasks",
+        "Loop is for known steps, graph is for unknown steps",
+        "Loop is for deterministic tasks, graph is for random tasks",
+        "Loop is for parallel processing, graph is for sequential processing"
+      ],
+      "answer_index": 1,
+      "source_quote": "Loop: one agent inside one feedback loop. You give Claude Code a goal and a check, and it keeps going until the check passes. The model chooses every step in between. Graph: the work is split into steps that your code wires together.",
+      "difficulty": "hard"
+    },
+    {
+      "concept": "What is the main purpose of the quiz generator built in the talk?",
+      "stem": "What is the main purpose of the quiz generator built in the talk?",
+      "options": [
+        "To replace the model entirely",
+        "To generate a multiple-choice quiz from the slides",
+        "To act as a user interface for the model",
+        "To provide the model with more data"
+      ],
+      "answer_index": 1,
+      "source_quote": "Our quiz generator is a harness that writes a multiple-choice quiz from these slides.",
+      "difficulty": "medium"
+    }
+  ]
+}

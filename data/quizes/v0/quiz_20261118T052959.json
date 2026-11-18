@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Who owns the control flow?",
+      "stem": "Who owns the control flow?",
+      "options": [
+        "The model",
+        "The program",
+        "The user",
+        "The agent"
+      ],
+      "answer_index": 1,
+      "source_quote": "Who owns the control flow?",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "What is an agent?",
+      "stem": "What is an agent?",
+      "options": [
+        "A model using tools in a loop",
+        "A program that runs on its own",
+        "A human who writes code",
+        "A system that runs without checks"
+      ],
+      "answer_index": 0,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the main issue with the tool loop alone?",
+      "stem": "What is the main issue with the tool loop alone?",
+      "options": [
+        "It does not check for errors",
+        "It runs too slowly",
+        "It uses too much memory",
+        "It requires too much user input"
+      ],
+      "answer_index": 0,
+      "source_quote": "The tool loop alone does not help: it feeds back what happened, not whether it was right.",
+      "difficulty": "hard"
+    },
+    {
+      "concept": "What is the role of the feedback loop?",
+      "stem": "What is the role of the feedback loop?",
+      "options": [
+        "To run the model",
+        "To check if the work is correct",
+        "To provide the model with more data",
+        "To speed up the process"
+      ],
+      "answer_index": 1,
+      "source_quote": "The feedback loop checks it.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the difference between a loop and a graph in the context of agents?",
+      "stem": "What is the difference between a loop and a graph in the context of agents?",
+      "options": [
+        "Loops are for small tasks, graphs are for large tasks",
+        "Loops are controlled by the model, graphs are controlled by the code",
+        "Loops are for single agents, graphs are for multiple agents",
+        "Loops are for feedback, graphs are for checks"
+      ],
+      "answer_index": 1,
+      "source_quote": "Loop: one agent inside one feedback loop. You give Claude Code a goal and a check, and it keeps going until the check passes. The model chooses every step in between. Graph: the work is split into steps that your code wires together. Plan first, implement the pieces in parallel with separate agents, review, send back only what failed, then merge.",
+      "difficulty": "hard"
+    }
+  ]
+}

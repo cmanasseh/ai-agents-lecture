@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "What is the role of the harness in a coding agent?",
+      "stem": "In the context of a coding agent, what is the primary role of the harness?",
+      "options": [
+        "To provide the model with a set of tools to use",
+        "To enforce rules and checks on the model's output",
+        "To run the model's code directly",
+        "To manage the user interface of the agent"
+      ],
+      "answer_index": 1,
+      "source_quote": "The harness is everything that is not the model. It is deterministic code, and it is where engineering happens. Claude Code is a harness around a model. The blue lines show where each part lives in Claude Code. Context: what the model sees. Tools: which actions exist. Checks: what counts as right. Limits: turns, tokens, time. Trace: a record of every step. You rarely change the model. You change the harness. Do not confuse this with an evaluation harness, which runs tests on the finished system. That is Part 2.  ",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the main difference between a loop and a graph in agent design?",
+      "stem": "What is the main difference between a loop and a graph in agent design?",
+      "options": [
+        "Loops are used for small tasks, while graphs are used for large tasks",
+        "Loops are controlled by the model, while graphs are controlled by the code",
+        "Loops are deterministic, while graphs are non-deterministic",
+        "Loops are used for feedback, while graphs are used for planning"
+      ],
+      "answer_index": 1,
+      "source_quote": "Loop: one agent inside one feedback loop. You give Claude Code a goal and a check, and it keeps going until the check passes. The model chooses every step in between. Graph: the work is split into steps that your code wires together. Plan first, implement the pieces in parallel with separate agents, review, send back only what failed, then merge. Each box in the graph is still an agent with its own small loop. What changes is who decides the route between them. A check can be code, such as tests, or another agent, such as a reviewer. Prefer code when code can decide. Some authors call the loop an agent and the graph a workflow. The distinction is the same: who owns the control flow.  ",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the purpose of a feedback loop in an agent system?",
+      "stem": "What is the purpose of a feedback loop in an agent system?",
+      "options": [
+        "To provide the model with context for its actions",
+        "To ensure the model's output meets the specification",
+        "To allow the model to make decisions autonomously",
+        "To run the model's code directly"
+      ],
+      "answer_index": 1,
+      "source_quote": "The feedback loop is around the whole agent. A check compares the output with the specification, and the error goes back in as the next input. It is how we know the work is right. Systems engineers know this as cascade control: an inner loop that acts and an outer loop that holds the setpoint. The check is the sensor and the specification is the setpoint. Checks are things like tests, type checkers, linters and schema validation. They are deterministic and cheap. An agent is only as good as its feedback signal. A check only proves what it measures, so choosing what to measure is the engineering. In our app the check is: does every question quote the slides word for word?  ",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the main idea behind the V-model in working with a coding agent?",
+      "stem": "What is the main idea behind the V-model in working with a coding agent?",
+      "options": [
+        "The model should be used to write all the code",
+        "The code should be written first, and the model should be used to verify it",
+        "The model should be used to write the code and the checks",
+        "The model should be used to write the code and the tests"
+      ],
+      "answer_index": 1,
+      "source_quote": "This is the V-model, run in minutes instead of months. The red arrow is the feedback loop from before: verification fails, the error goes back, the agent builds again. Ask for a plan before any code and read it. A wrong plan is cheap to fix; wrong code is not. Write tests first and let the agent iterate against them. Keep each change small enough to review. Commit after every passing step. Git is the undo button.  ",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "What is the key difference between the loop and the graph approach in organizing work?",
+      "stem": "What is the key difference between the loop and the graph approach in organizing work?",
+      "options": [
+        "The loop approach is more structured, while the graph approach is more flexible",
+        "The loop approach is controlled by the model, while the graph approach is controlled by the code",
+        "The loop approach is used for known steps, while the graph approach is used for unknown steps",
+        "The loop approach is used for small tasks, while the graph approach is used for large tasks"
+      ],
+      "answer_index": 1,
+      "source_quote": "Loop: one agent inside one feedback loop. You give Claude Code a goal and a check, and it keeps going until the check passes. The model chooses every step in between. Graph: the work is split into steps that your code wires together. Plan first, implement the pieces in parallel with separate agents, review, send back only what failed, then merge. Each box in the graph is still an agent with its own small loop. What changes is who decides the route between them. A check can be code, such as tests, or another agent, such as a reviewer. Prefer code when code can decide. Some authors call the loop an agent and the graph a workflow. The distinction is the same: who owns the control flow.  ",
+      "difficulty": "medium"
+    }
+  ]
+}
