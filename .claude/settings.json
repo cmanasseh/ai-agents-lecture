@@ -2,7 +2,6 @@
   "model": "claude-opus-5-5",
   "permissions": {
     "allow": [
-      "Bash(uv run pytest:*)",
       "Bash(uv run ruff:*)",
       "Bash(uv sync)",
       "Bash(git status)",
@@ -16,9 +15,7 @@
     "deny": [
       "Read(./.env)",
       "Edit(./runs/**)",
-      "Bash(pip:*)",
-      "Bash(git push:*)",
-      "Bash(git reset:*)"
+      "Bash(pip:*)"
     ]
   },
   "hooks": {
