@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Agent definition",
+      "stem": "What is an agent according to the text?",
+      "options": [
+        "A model that only turns text into text.",
+        "A model using tools in a loop.",
+        "A model that runs commands without feedback.",
+        "A model that runs code without context."
+      ],
+      "answer_index": 1,
+      "source_quote": "> An agent is a model using tools in a loop.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Agent loop",
+      "stem": "What does the tool loop in an agent do?",
+      "options": [
+        "It runs the model's code without feedback.",
+        "It feeds results back to the model for the next step.",
+        "It checks if the model's work is correct.",
+        "It decides the model's next action without context."
+      ],
+      "answer_index": 1,
+      "source_quote": "> The tool loop does the work. The feedback loop checks it.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Agent feedback",
+      "stem": "How does the feedback loop differ from the tool loop in an agent?",
+      "options": [
+        "The feedback loop runs the model's code without context.",
+        "The feedback loop feeds results back to the and decides the next step.",
+        "The feedback loop checks the output against a specification.",
+        "The feedback loop runs the model's code without feedback."
+      ],
+      "answer_index": 2,
+      "source_quote": "> The feedback loop is around the whole agent. A check compares the output with the specification, and the error goes back in as the next input.",
+      "difficulty": "hard"
+    },
+    {
+      "concept": "Agent checks",
+      "stem": "What is the role of checks in an agent system?",
+      "options": [
+        "They run the model's code without feedback.",
+        "They ensure the model's work meets a specification.",
+        "They decide the model's next action without context.",
+        "They run the model's code without context."
+      ],
+      "answer_index": 1,
+      "source_quote": "> Checks are things like tests, type checkers, linters and schema validation. They are deterministic and cheap.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Agent harness",
+      "stem": "What is the harness in an agent system?",
+      "options": [
+        "The model that runs the code without feedback.",
+        "The deterministic code that controls the agent's behavior.",
+        "The model that decides the next action without context.",
+        "The code that runs the model's code without context."
+      ],
+      "answer_index": 1,
+      "source_quote": "> The harness is everything that is not the model. It is deterministic code, and it is where engineering happens.",
+      "difficulty": "easy"
+    }
+  ]
+}
