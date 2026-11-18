@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Agent as a model using tools in a loop",
+      "stem": "According to the quote 'An agent is a model using tools in a loop,' which statement best describes what an agent is?",
+      "options": [
+        "An agent is a tool that can be used by anyone.",
+        "An agent is a model that repeatedly uses tools in a cycle.",
+        "An agent is a system that only uses one tool at a time.",
+        "An agent is a person who acts on behalf of another."
+      ],
+      "answer_index": 1,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Errors can compound over multiple steps",
+      "stem": "According to the quote '95% right per step is 36% right after 20 steps,' what does this illustrate?",
+      "options": [
+        "That errors can compound over multiple steps.",
+        "That 95% accuracy is always correct.",
+        "That 36% is the maximum accuracy possible.",
+        "That accuracy improves with more steps."
+      ],
+      "answer_index": 0,
+      "source_quote": "95% right per step is 36% right after 20 steps.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "The model proposes, the harness decides",
+      "stem": "According to the quote 'The model proposes. The harness decides.', which of the following statements is correct?",
+      "options": [
+        "The model is responsible for making the final decision.",
+        "Both the model and the harness share equal responsibility for the decision.",
+        "The model and the harness make decisions simultaneously.",
+        "The harness is responsible for making the final decision."
+      ],
+      "answer_index": 3,
+      "source_quote": "The model proposes. The harness decides.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "A check is a deterministic and cheap way to validate output",
+      "stem": "According to the quote, which statement best describes the nature of checks?",
+      "options": [
+        "Checks are only useful for large-scale software projects.",
+        "Checks are non-deterministic and unreliable.",
+        "A check is a deterministic and cheap way to validate output.",
+        "Checks are always expensive to perform."
+      ],
+      "answer_index": 2,
+      "source_quote": "Checks are things like tests, type checkers, linters and schema validation. They are deterministic and cheap.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "The feedback loop checks the agent's output against a specification",
+      "stem": "According to the statement 'The feedback loop checks it.', which of the following is correct?",
+      "options": [
+        "The feedback loop checks the agent's output against a specification.",
+        "The feedback loop checks the agent's environment against a model.",
+        "The feedback loop checks the agent's internal state against a goal.",
+        "The feedback loop checks the agent's input against a reward function."
+      ],
+      "answer_index": 0,
+      "source_quote": "The feedback loop checks it.",
+      "difficulty": "hard"
+    }
+  ]
+}

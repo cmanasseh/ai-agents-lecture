@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Control flow ownership",
+      "stem": "Who owns the control flow?",
+      "options": [
+        "The programmer",
+        "The runtime environment",
+        "The compiler",
+        "The operating system"
+      ],
+      "answer_index": 0,
+      "source_quote": "Who owns the control flow?",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Error compounding",
+      "stem": "Which of the following best describes the concept of error compounding, based on the quote: '95% right per step is 36% right after 20 steps.'?",
+      "options": [
+        "Error compounding indicates that accuracy remains constant regardless of the number of steps.",
+        "Error compounding means that small errors at each step add up to a large overall error.",
+        "Error compounding occurs when each step is correct, leading to perfect overall accuracy.",
+        "Error compounding refers to the process of improving accuracy over time with each step."
+      ],
+      "answer_index": 1,
+      "source_quote": "95% right per step is 36% right after 20 steps.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Agent architecture",
+      "stem": "According to the statement 'An agent is a model using tools in a loop,' which of the following best describes the core concept of an agent?",
+      "options": [
+        "An agent is a static model that provides one-time responses to specific queries.",
+        "An agent is a collection of tools that operate independently without any internal processing.",
+        "An agent is a human performing tasks with the assistance of external tools.",
+        "An agent is a system that continuously processes inputs and produces outputs through a cycle of tool usage."
+      ],
+      "answer_index": 3,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Harness engineering",
+      "stem": "According to the statement 'The harness is everything that is not the model,' which of the following best defines the harness?",
+      "options": [
+        "The harness refers to the physical structure of the model.",
+        "The harness is a subset of the model's components.",
+        "The harness includes all components that are not part of the model itself.",
+        "The harness is defined only by the model's specifications."
+      ],
+      "answer_index": 2,
+      "source_quote": "The harness is everything that is not the model.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Tool loop vs feedback loop",
+      "stem": "According to the quote, 'The tool loop does the work. The feedback loop checks it,' which of the following statements is correct?",
+      "options": [
+        "The tool loop performs the action, and the feedback loop evaluates the result.",
+        "The feedback loop is responsible for executing tasks.",
+        "The tool loop is responsible for monitoring and correcting errors.",
+        "The feedback loop ensures that the work is carried out correctly."
+      ],
+      "answer_index": 0,
+      "source_quote": "The tool loop does the work. The feedback loop checks it.",
+      "difficulty": "hard"
+    }
+  ]
+}

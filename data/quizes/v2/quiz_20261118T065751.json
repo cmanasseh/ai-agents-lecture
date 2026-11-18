@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Agent as a model using tools in a loop",
+      "stem": "According to the statement 'An agent is a model using tools in a loop,' what best describes an agent?",
+      "options": [
+        "An agent is a system that continuously uses tools to make decisions and take actions.",
+        "An agent is a physical device that performs tasks automatically.",
+        "An agent is a type of software that only uses one tool at a time.",
+        "An agent is a person who acts on behalf of another."
+      ],
+      "answer_index": 0,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "A feedback loop checks the agent's work",
+      "stem": "According to the quote, what is the role of the feedback loop?",
+      "options": [
+        "The feedback loop does the work.",
+        "The feedback loop creates the agent.",
+        "The feedback loop controls the tool loop.",
+        "The feedback loop checks the agent's work."
+      ],
+      "answer_index": 3,
+      "source_quote": "The tool loop does the work. The feedback loop checks it.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "The model proposes, the harness decides",
+      "stem": "According to the quote 'The model proposes. The harness decides.', which of the following statements is correct?",
+      "options": [
+        "The harness is responsible for making the final decision.",
+        "The model and the harness are both passive in the decision-making process.",
+        "The model and the harness share equal responsibility for the decision.",
+        "The model is responsible for making the final decision."
+      ],
+      "answer_index": 0,
+      "source_quote": "The model proposes. The harness decides.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "The harness is deterministic code where engineering happens",
+      "stem": "According to the quote, what is the harness?",
+      "options": [
+        "The harness is a tool used to visualize the model in three dimensions.",
+        "The harness is everything that is not the model, and it is deterministic code where engineering happens.",
+        "The harness is a random process used to generate models from data.",
+        "The harness is the model itself, where all design decisions are made."
+      ],
+      "answer_index": 1,
+      "source_quote": "The harness is everything that is not the model. It is deterministic code, and it is where engineering happens.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Errors compound over time",
+      "stem": "According to the quote '95% right per step is 36% right after 20 steps,' which of the following statements is correct?",
+      "options": [
+        "The accuracy increases exponentially with each step.",
+        "After 10 steps, the accuracy is 50%.",
+        "If each step has a 95% chance of being correct, the overall accuracy after 20 steps is 36%.",
+        "The probability of being correct after 20 steps is 95%."
+      ],
+      "answer_index": 2,
+      "source_quote": "95% right per step is 36% right after 20 steps.",
+      "difficulty": "hard"
+    }
+  ]
+}

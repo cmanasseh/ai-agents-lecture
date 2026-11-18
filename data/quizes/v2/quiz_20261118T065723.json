@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "concept": "Control flow ownership",
+      "stem": "Who owns the control flow?",
+      "options": [
+        "The owner of the control flow",
+        "The operating system",
+        "The compiler",
+        "The programmer"
+      ],
+      "answer_index": 0,
+      "source_quote": "Who owns the control flow?",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Error compounding",
+      "stem": "According to the quote '95% right per step is 36% right after 20 steps,' what does this best illustrate?",
+      "options": [
+        "The concept of error compounding",
+        "The benefits of using simple models",
+        "The advantages of long-term planning",
+        "The importance of precision in each step"
+      ],
+      "answer_index": 0,
+      "source_quote": "95% right per step is 36% right after 20 steps.",
+      "difficulty": "easy"
+    },
+    {
+      "concept": "Agent architecture",
+      "stem": "According to the statement 'An agent is a model using tools in a loop,' which of the following best describes the core concept of agent architecture?",
+      "options": [
+        "Agent architecture refers to the physical hardware that runs the agent's model.",
+        "Agent architecture is the internal structure of the agent's neural network.",
+        "Agent architecture is the process by which an agent continuously uses tools to make decisions and take actions.",
+        "Agent architecture is the set of rules that govern how an agent interacts with its environment."
+      ],
+      "answer_index": 2,
+      "source_quote": "An agent is a model using tools in a loop.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Harness engineering",
+      "stem": "According to the quote, 'The harness is everything that is not the model,' which of the following statements best captures the meaning of 'harness engineering'?",
+      "options": [
+        "Harness engineering refers to the design and construction of the model itself.",
+        "Harness engineering involves the creation of all components that are not part of the model.",
+        "Harness engineering is the process of defining what is included in the model.",
+        "Harness engineering is focused solely on the model's structural integrity."
+      ],
+      "answer_index": 1,
+      "source_quote": "The harness is everything that is not the model.",
+      "difficulty": "medium"
+    },
+    {
+      "concept": "Tool loop vs feedback loop",
+      "stem": "According to the quote, 'The tool loop does the work. The feedback loop checks it,' which of the following statements is correct?",
+      "options": [
+        "D. The tool loop is responsible for checking the results of the work.",
+        "A. The feedback loop is responsible for executing tasks.",
+        "B. The tool loop is responsible for monitoring and evaluation.",
+        "C. The feedback loop ensures the work is done correctly."
+      ],
+      "answer_index": 3,
+      "source_quote": "The tool loop does the work. The feedback loop checks it.",
+      "difficulty": "hard"
+    }
+  ]
+}
