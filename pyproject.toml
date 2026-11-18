@@ -4,10 +4,16 @@ version = "0.1.0"
 description = "A lecture on AI agents with an example implementation of a simple quiz generation agent."
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "ollama>=0.6.3",
+    "pydantic>=2.14.3",
+]
 
 [dependency-groups]
 dev = [
     "pytest>=9.2.0",
     "ruff>=0.17.5",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
