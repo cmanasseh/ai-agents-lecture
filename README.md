@@ -63,17 +63,31 @@ From the repo root, with the Ollama server running:
 
 ```bash
 uv sync                                              # install dependencies
-uv run python -m quizgen.v0_single slides/lecture.md # generate one quiz (v0)
+uv run python -m quizgen.v0_single slides/lecture.md # v0: one structured call
+uv run python -m quizgen.v1_loop slides/lecture.md   # v1: agent loop with a validator
+uv run python -m quizgen.v2_graph slides/lecture.md  # v2: agent graph
 ```
 
-The model defaults to `qwen3:8b`. Swap it with an environment variable:
+Each command generates one quiz. The model defaults to `qwen3:8b`. Swap it with an environment
+variable; nothing else changes:
 
 ```bash
-QUIZGEN_MODEL=qwen3.5:4b uv run python -m quizgen.v0_single slides/lecture.md
+QUIZGEN_MODEL=qwen3.5:4b uv run python -m quizgen.v2_graph slides/lecture.md
 ```
 
-Each run writes the quiz to `data/quizes/v0/quiz_<timestamp>.json` and appends a trace
-(model, tokens, latency, quiz) to `runs/v0.jsonl`. Paths are relative, so run from the repo root.
+Each run writes the quiz to `data/quizes/<version>/quiz_<timestamp>.json` and appends a trace to
+`runs/<version>.jsonl`. Every trace has the model, input hash, tokens, latency and the quiz. v1
+adds `turns` and `unresolved`; v2 adds `concepts_found`, `revisions` and `unresolved`. Paths are
+relative, so run from the repo root.
+
+To generate several quizzes, loop:
+
+```bash
+for i in {1..5}; do uv run python -m quizgen.v1_loop slides/lecture.md; done
+```
+
+To run a version exactly as it was first built, check out its tag (`git checkout v1`). For how
+each version works and how they compare, see [docs/comparison.md](docs/comparison.md).
 
 Run the tests (no Ollama needed; the LLM is faked):
 
