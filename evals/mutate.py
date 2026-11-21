@@ -67,7 +67,8 @@ def survives(mutant: Mutant, test_cmd: list[str]) -> bool:
     original = path.read_bytes()  # bytes, so the restore is exact (line endings too)
     text = original.decode()
     if mutant.find not in text:
-        raise ValueError(f"{mutant.file}: text to mutate not found: {mutant.find!r}")
+        msg = f"{mutant.file}: text to mutate not found: {mutant.find!r}"
+        raise ValueError(msg)
     try:
         path.write_bytes(text.replace(mutant.find, mutant.replace, 1).encode())
         result = subprocess.run(test_cmd, capture_output=True, check=False)

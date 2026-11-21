@@ -23,9 +23,7 @@ QUIZ_DIR = Path("data/quizes")
 RUNS_DIR = Path("runs")
 REPORT_DIR = Path("evals/reports")
 LEVEL = {"easy": 1, "medium": 2, "hard": 3}
-STOPWORDS = set(
-    "a an the is are of to in on for and or by with what which who how does do it this that".split()
-)
+STOPWORDS = {"a", "an", "the", "is", "are", "of", "to", "in", "on", "for", "and", "or", "by", "with", "what", "which", "who", "how", "does", "do", "it", "this", "that"}
 
 # The lecturer's intent, written down as numbers. Change a gate in a reviewed pull request,
 # never to make a failing run pass.
